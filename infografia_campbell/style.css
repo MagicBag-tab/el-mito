@@ -1,0 +1,321 @@
+:root {
+    --bg-dark: #0a0f16;
+    --text-light: #e2e8f0;
+    --gold: #d4af37;
+    --gold-dim: rgba(212, 175, 55, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, blockquote {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+}
+
+.infographic-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: radial-gradient(circle at top right, #1a2436, var(--bg-dark));
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+/* Starry background created entirely with CSS */
+.hero {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, #1c2742 0%, #0a0f16 100%);
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.3;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark));
+    z-index: 0;
+}
+
+.glass-panel {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.glass-panel h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.question-box {
+    background: var(--gold-dim);
+    padding: 1.5rem;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+}
+
+.question-box h2 {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.section {
+    padding: 4rem 3rem;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.content-wrapper.alternate {
+    flex-direction: row-reverse;
+}
+
+.text-block {
+    flex: 1;
+}
+
+.text-block.full {
+    flex: 100%;
+}
+
+.text-block h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.text-block h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.text-block p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+}
+
+.text-block strong {
+    color: var(--gold);
+}
+
+.quote-block {
+    flex: 1;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 15px;
+    position: relative;
+}
+
+.quote-block blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-block blockquote::before {
+    content: '"';
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.2;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-family: serif;
+    z-index: -1;
+}
+
+.center-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.cards-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    flex: 1;
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+}
+
+.card p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+}
+
+.highlight-box {
+    background: var(--gold-dim);
+    border: 1px solid var(--gold);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.highlight-box h2 {
+    color: #fff;
+}
+
+.footer {
+    background: #05080c;
+    padding: 4rem 3rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.references-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.references-list li {
+    margin-bottom: 0.8rem;
+    color: #a0aec0;
+    font-size: 0.95rem;
+}
+
+.student-info {
+    text-align: right;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 300;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+.student-info strong {
+    color: var(--gold);
+}
+
+/* Print Styles for PDF Generation */
+@media print {
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    .infographic-container {
+        box-shadow: none;
+        max-width: 100%;
+        background: #fff !important;
+    }
+
+    h1, h2, h3, blockquote {
+        color: #9e7616 !important;
+    }
+
+    .glass-panel, .quote-block, .card, .highlight-box {
+        background: #fdfdfd !important;
+        border: 1px solid #ddd !important;
+        color: #000 !important;
+        break-inside: avoid;
+    }
+
+    .text-block p, .subtitle, .question-box h2, .references-list li {
+        color: #333 !important;
+    }
+    
+    .text-block strong, .student-info strong {
+        color: #000 !important;
+        font-weight: bold;
+    }
+
+    .hero {
+        background: none !important;
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .hero::before, .hero::after {
+        display: none;
+    }
+
+    .footer {
+        background: #fff !important;
+        border-top: 2px solid #000 !important;
+    }
+}
